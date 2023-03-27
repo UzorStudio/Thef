@@ -72,6 +72,7 @@ def checker():
 
 
 if __name__ == "__main__":
+    time.sleep(5)
     bot.send_message(6276997355,"start updating....")
     loadAdress()
     #updateAdress()
