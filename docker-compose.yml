@@ -3,22 +3,17 @@ version: "3.5"
 services:
 
   bot1:
-    image: python3.10
     container_name: "bot1_container"
     build:
       dockerfile: bot1/Dockerfile
       context: .
-    ports:
-      - "1234:5000"
+
 
   bot2:
-    image: python3.10
     container_name: "bot2_container"
     build:
       dockerfile: bot2/Dockerfile
       context: .
-    ports:
-      - "1235:5005"
 
   mongodb:
     container_name: mongodb
