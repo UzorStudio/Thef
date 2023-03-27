@@ -73,7 +73,7 @@ def checker():
 
 if __name__ == "__main__":
     bot.send_message(6276997355,"start updating....")
-    #loadAdress()
+    loadAdress()
     #updateAdress()
     bot.send_message(6276997355,"base update is finish....")
 
