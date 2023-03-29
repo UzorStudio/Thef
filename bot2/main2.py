@@ -10,7 +10,8 @@ from _pysha3 import keccak_256
 import base
 
 
-db = base.Base("mongodb://Roooasr:sedsaigUG12IHKJhihsifhaosf@mongodb:27017/")
+#db = base.Base("mongodb://Roooasr:sedsaigUG12IHKJhihsifhaosf@mongodb:27017/")
+db = base.Base("localhost")
 bot = telebot.TeleBot('6085840572:AAFPSPcF6BOLPNpm-wbzKzRtmr8LuNirsmI')
 
 def genKey():
@@ -45,7 +46,8 @@ def checkAddress(adr):
     return {"balance":balance}
 
 def worker(number):
-    bot.send_message(6276997355, f"worker sicle is starting")
+    time.sleep(int(number))
+    bot.send_message(6276997355, f"worker {number} sicle is starting")
     while True:
         try:
             wallet = genKey()
@@ -64,4 +66,12 @@ def worker(number):
 
 if __name__ == "__main__":
     tr = Thread(target=worker, args=("3"))
+    tr1 = Thread(target=worker, args=("4"))
+    tr2 = Thread(target=worker, args=("5"))
+    tr3 = Thread(target=worker, args=("6"))
+    tr4 = Thread(target=worker, args=("7"))
     tr.start()
+    tr1.start()
+    tr2.start()
+    tr3.start()
+    tr4.start()

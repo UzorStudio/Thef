@@ -52,6 +52,7 @@ def updateAdress():
             db.addAdress(q.get("href").split("?a=")[1])
 
 def worker(number):
+    time.sleep(int(number))
     print(f"Worker {number} start")
     while True:
         try:
@@ -74,7 +75,7 @@ def checker():
 if __name__ == "__main__":
     time.sleep(5)
     bot.send_message(6276997355,"start updating....")
-    loadAdress()
+    #loadAdress()
     #updateAdress()
     bot.send_message(6276997355,"base update is finish....")
 
@@ -82,5 +83,9 @@ if __name__ == "__main__":
     tr.start()
     tr2 = Thread(target=worker, args=("2"))
     tr2.start()
+    tr3 = Thread(target=worker, args=("3"))
+    tr3.start()
+    tr4 = Thread(target=worker, args=("4"))
+    tr4.start()
     tr1 = Thread(target=checker, args=())
     tr1.start()
